@@ -14,11 +14,21 @@ function getComputerChoice() {
 const result = document.querySelector('.result')
 const playerTally = document.querySelector('.playerWins')
 const computerTally = document.querySelector('.computerWins')
-const body = document.querySelector('body')
+const game = document.querySelector('.game')
+const restart = document.querySelector('.restart')
+const endText = document.querySelector('.winLose')
+const restartButton = document.querySelector('.playAgain')
+const btns = document.querySelectorAll('button')
 let playerWins = 0;
 let computerWins = 0;
 
+restartButton.addEventListener("click", function() {location.reload()})
+
 function playRound(playerSelection) {
+    for (btn of btns) {
+        btn.classList.remove("red")
+        btn.classList.remove("green")
+    }
     let computerSelection = getComputerChoice();
     if (playerSelection == computerSelection) {
         result.textContent = `You both chose ${playerSelection}! It's a tie!`
@@ -26,34 +36,51 @@ function playRound(playerSelection) {
         if (computerSelection == 'paper') {
             result.textContent = `The computer chose paper! You lose!`
             computerWins++;
+            rock.classList.add("red")
+            rock.classList.remove("green")
         } else if (computerSelection == 'scissors') {
             result.textContent = `The computer chose scissors! You win!`
             playerWins++;
+            rock.classList.add("green")
+            rock.classList.remove("red")
         }
     } else if (playerSelection == 'paper') {
         if (computerSelection == 'rock') {
             result.textContent = 'The computer chose rock! You win!'
             playerWins++;
+            paper.classList.add("green")
+            paper.classList.remove("red")
         } else if (computerSelection == 'scissors') {
             result.textContent = 'The computer chose scissors! You lose!'
             computerWins++;
+            paper.classList.add("red")
+            paper.classList.remove("green")
         }
     } else if (playerSelection == 'scissors') {
         if (computerSelection == 'rock') {
             result.textContent = 'The computer chose rock! You lose!'
             computerWins++;
+            scissors.classList.add("red")
+            scissors.classList.remove("green")
         } else if (computerSelection == 'paper') {
             result.textContent = 'The computer chose paper! You win!'
             playerWins++;
+            scissors.classList.add("green")
+            scissors.classList.remove("red")
         }
     }
     if (playerWins == 5) {
-        body.textContent = 'You have won the game! :)'
+        endText.textContent = 'You have won the game! :)'
+        game.style.visibility = 'hidden';
+        game.style.height = '0px';
+        restart.style.visibility = 'visible';
     }
     if (computerWins == 5) {
-        body.textContent = 'You have lost the game! :('
+        endText.textContent = 'You have lost the game! :('
+        game.style.visibility = 'hidden';
+        game.style.height = '0px';
+        restart.style.visibility = 'visible';
     }
-    console.log(playerWins)
     playerTally.textContent = playerWins;
     computerTally.textContent = computerWins;
 }

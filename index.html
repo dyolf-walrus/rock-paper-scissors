@@ -3,20 +3,27 @@
     <head>
         <title>Rock Paper Scissors</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>Play Rock, Paper, Scissors</h1>
-        <br>Make your selection</br>
-        <p>
-            <button class="chooseRock">Rock</button>
-            <button class="choosePaper">Paper</button>
-            <button class="chooseScissors">Scissors</button>
-        </p>
-        <p class="tally">
-            <div class="result"></div>
-            <div>Player has won <span class="playerWins">0</span> times</div>
-            <div>Computer has won <span class="computerWins">0</span> times</div>
-        </p>
+        <div class="game">
+            <p>Make your selection and try to beat the computer. The first player to win five rounds wins the game!</p>
+            <p>
+                <button class="chooseRock">Rock</button>
+                <button class="choosePaper">Paper</button>
+                <button class="chooseScissors">Scissors</button>
+            </p>
+            <p class="tally">
+                <div class="result"></div>
+                <div>You have won <span class="playerWins">0</span> rounds so far.</div>
+                <div>The computer has won <span class="computerWins">0</span> rounds so far.</div>
+            </p>
+        </div>
+        <div class="restart">
+            <div class="winLose"></div>
+            <button class="playAgain">Click here to play again!</button>
+        </div>
     </body>
     <script src="scripts.js"></script>
 </html>

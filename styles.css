@@ -1,0 +1,46 @@
+body {
+    background-color: #c7c7c7;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    background-color: #7a7a7a;
+    margin: 0px;
+    padding: 10px;
+    font-size: 48px;
+}
+
+.result {
+    padding: 5px;
+    min-height: 1.1em;
+}
+
+button {
+    border: 3px solid black;
+    border-radius: 8px;
+    font-size: 30px;
+    padding: 5px 10px;
+    margin: 0px 10px;
+}
+
+.red {
+    color: #6d3232;
+    background-color: #ce5f5f;
+    border-color: #6d3232
+}
+
+.green {
+    color: #3c6d32;
+    background-color: #68ce5f;
+    border-color: #3c6d32
+}
+
+.restart {
+    visibility: hidden;
+}
+
+.playAgain {
+    margin: 15px;
+}
